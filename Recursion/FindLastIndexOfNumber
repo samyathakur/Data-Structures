@@ -1,0 +1,26 @@
+ public static int lastIndexBetter(int a[],int x,int si){
+	        if(si==a.length){
+	            return -1;
+	        }
+	        int k=lastIndexBetter(a,x,si+1);
+	        if(k!=-1){
+	            return k;
+	        }else{
+	            if(a[si]==x){
+	                return si;
+	            }else{
+	                return -1;
+	            }
+	        }
+	    }
+	 
+	 public static void main(String[] args) {
+			Scanner s = new Scanner(System.in);
+			int size = s.nextInt();
+			int[] input = new int[size];
+			for(int i = 0; i < size; i++){
+				input[i] = s.nextInt();
+			}
+			int x = s.nextInt();
+			System.out.println(lastIndexBetter(input, x, 0));
+		}
